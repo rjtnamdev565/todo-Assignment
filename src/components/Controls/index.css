@@ -3,13 +3,13 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 0 25px;
+  padding: 15px 25px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
 .controls p {
-  color: #9495a5;
+  color: var(--light-text-secondary);
 }
 
 .primary--buttons button,
@@ -19,7 +19,11 @@
   background: none;
 
   cursor: pointer;
-  color: #9495a5;
+  color: var(--light-text-secondary);
+}
+
+.primary--buttons button:hover {
+  color: var(--light-text-hover);
 }
 
 .primary--buttons button {
@@ -29,5 +33,5 @@
 }
 
 .primary--buttons .active {
-  color: #3a7cfd;
+  color: var(--light-text-active);
 }

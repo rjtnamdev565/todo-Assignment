@@ -8,15 +8,24 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --color-header: #ffffff;
+  --light-text-primary: hsl(235, 19%, 35%);
+  --light-text-secondary: hsl(236, 9%, 61%);
+  --light-text-active: #3a7cfd;
+  --light-text-hover: #494c6b;
+  --light-text-completed: hsl(236, 33%, 92%);
+  --gradient: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
 * {
-  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 body {
-  margin: 0;
   overflow-x: hidden;
 }
 
