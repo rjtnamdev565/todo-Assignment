@@ -50,7 +50,7 @@ body {
 
 .container {
   max-width: 540px;
-  min-width: 540px;
+  min-width: 400px;
   padding: 0 20px;
   margin: 0 auto;
   border: 1px solid red;
