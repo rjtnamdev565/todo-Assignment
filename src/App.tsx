@@ -40,3 +40,4 @@ export default App;
 // 11. Drag and drop
 // 12. Add task with enter key
 // 13. Align the input field text with the span
+// 14. Conditional render controls and footer
