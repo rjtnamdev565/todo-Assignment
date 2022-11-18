@@ -1,5 +1,3 @@
-import React, { Fragment } from "react";
-
 import Controls from "./components/Controls";
 import Header from "./components/Header";
 import Input from "./components/Input";
@@ -7,9 +5,9 @@ import TodoList from "./components/TodoList";
 
 function App() {
   return (
-    <Fragment>
+    <div className="App">
       <div className="background bg-dark" />
-      <div className="App">
+      <div className="container">
         <Header />
 
         <Input />
@@ -23,7 +21,7 @@ function App() {
           <p>Drag and drop to reorder list</p>
         </footer>
       </div>
-    </Fragment>
+    </div>
   );
 }
 

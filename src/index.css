@@ -39,7 +39,7 @@ body {
   background-image: url("./assets/bg-desktop-dark.jpg");
 }
 
-.App {
+.container {
   max-width: 540px;
   min-width: 540px;
   padding: 0 20px;
