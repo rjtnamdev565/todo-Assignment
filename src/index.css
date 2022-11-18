@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -13,5 +13,23 @@
 
 body {
   margin: 0;
-  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 300px;
+  z-index: -100;
+}
+
+.bg-light {
+  background-image: url("./assets/bg-desktop-light.jpg");
+}
+
+.bg-dark {
+  background-image: url("./assets/bg-desktop-dark.jpg");
 }
