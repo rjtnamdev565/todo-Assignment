@@ -14,13 +14,20 @@ type Todo = {
 };
 
 const TodoList = () => {
-  const { todos } = useContext(TodoContext);
+  const { todos, completeTodo } = useContext(TodoContext);
+
+  const handleCompleteTodo = (id: number) => {
+    completeTodo(id);
+  };
 
   return (
     <ul>
       {todos.map((todo: Todo) => (
         <li key={todo.id}>
-          <span className={`checkmark ${todo.completed && "completed"}`}>
+          <span
+            className={`checkmark ${todo.completed && "completed"}`}
+            onClick={() => handleCompleteTodo(todo.id)}
+          >
             {todo.completed && <img src={iconCheck} alt="" />}
           </span>
           <p>{todo.text}</p>

@@ -10,6 +10,7 @@ type Todo = {
 const TodoContext = createContext({
   todos: [] as Todo[],
   addTodo: (text: string) => {},
+  completeTodo: (id: number) => {},
 });
 
 const TodoContextProvider = ({ children }: any) => {
@@ -26,9 +27,21 @@ const TodoContextProvider = ({ children }: any) => {
     setTodos([...todos, newTodo]);
   };
 
+  // create completeTodo function
+  const completeTodo = (id: number) => {
+    const updatedTodos = todos.map((todo) => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed;
+      }
+      return todo;
+    });
+
+    setTodos(updatedTodos);
+  };
+
   return (
     // the Provider gives access to the context to its children
-    <TodoContext.Provider value={{ todos, addTodo }}>
+    <TodoContext.Provider value={{ todos, addTodo, completeTodo }}>
       {children}
     </TodoContext.Provider>
   );
