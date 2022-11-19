@@ -14,7 +14,8 @@ type Todo = {
 };
 
 const TodoList = () => {
-  const { todos, completeTodo, deleteTodo } = useContext(TodoContext);
+  const { todos, completeTodo, deleteTodo, filteredTodos } =
+    useContext(TodoContext);
 
   const handleCompleteTodo = (id: number) => {
     completeTodo(id);
@@ -26,7 +27,7 @@ const TodoList = () => {
 
   return (
     <ul>
-      {todos.map((todo: Todo) => (
+      {filteredTodos.map((todo: Todo) => (
         <li key={todo.id}>
           <span
             className={`checkmark ${todo.completed && "completed"}`}

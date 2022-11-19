@@ -6,17 +6,23 @@ type Todo = {
   completed: boolean;
 };
 
+type Filter = "all" | "completed" | "active";
+
 // create context
 const TodoContext = createContext({
   todos: [] as Todo[],
+  filteredTodos: [] as Todo[],
+  filter: "all" as Filter,
   addTodo: (text: string) => {},
   completeTodo: (id: number) => {},
   deleteTodo: (id: number) => {},
   clearCompletedTodos: () => {},
+  filterTodos: (filter: Filter) => {},
 });
 
 const TodoContextProvider = ({ children }: any) => {
   const [todos, setTodos] = useState<Todo[]>([]);
+  const [filter, setFilter] = useState<Filter>("all");
 
   const addTodo = (text: string) => {
     const newTodo = {
@@ -51,10 +57,33 @@ const TodoContextProvider = ({ children }: any) => {
     setTodos(updatedTodos);
   };
 
+  const filterTodos = (filter: Filter) => {
+    setFilter(filter);
+  };
+
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === "all") {
+      return true;
+    } else if (filter === "completed") {
+      return todo.completed;
+    } else if (filter === "active") {
+      return !todo.completed;
+    }
+  });
+
   return (
     // the Provider gives access to the context to its children
     <TodoContext.Provider
-      value={{ todos, addTodo, completeTodo, deleteTodo, clearCompletedTodos }}
+      value={{
+        todos,
+        filter,
+        filteredTodos,
+        addTodo,
+        completeTodo,
+        deleteTodo,
+        clearCompletedTodos,
+        filterTodos,
+      }}
     >
       {children}
     </TodoContext.Provider>

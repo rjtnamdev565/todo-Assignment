@@ -53,9 +53,8 @@ export default App;
 
 // TODO
 // 1. Responsive design
-// 8. Filter
-// 9. Counter
 // 11. Drag and drop
+// 16. Move types to their own file
 // 10. Firebase
 // 13. Align the input field text with the span
 // 15. Move theme context to its own file
