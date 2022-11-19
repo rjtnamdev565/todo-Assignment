@@ -49,7 +49,6 @@ function App() {
 export default App;
 
 // TODO
-// 1.  Responsive design
 // 10. Firebase
 // 13. Align the input field text with the span
 // 15. Move theme context to its own file
