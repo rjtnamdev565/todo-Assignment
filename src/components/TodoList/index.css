@@ -52,10 +52,14 @@ li .checkmark {
   border-radius: 50%;
   border: 0.5px solid var(--light-text-completed);
 
-  background-image: var(--gradient);
+  /* background-image: var(--gradient); */
 
   text-align: center;
   cursor: pointer;
+}
+
+li .completed {
+  background-image: var(--gradient);
 }
 
 #dark li .checkmark {

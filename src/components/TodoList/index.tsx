@@ -4,16 +4,26 @@ import iconCheck from "../../assets/icon-check.svg";
 import iconCross from "../../assets/icon-cross.svg";
 
 import "./index.css";
+import { useContext } from "react";
+import { TodoContext } from "../../context/TodoContext";
+
+type Todo = {
+  id: number;
+  text: string;
+  completed: boolean;
+};
 
 const TodoList = () => {
+  const { todos } = useContext(TodoContext);
+
   return (
     <ul>
-      {[1, 2, 3].map((item) => (
-        <li key={item}>
-          <span className="checkmark">
-            <img src={iconCheck} alt="" />
+      {todos.map((todo: Todo) => (
+        <li key={todo.id}>
+          <span className={`checkmark ${todo.completed && "completed"}`}>
+            {todo.completed && <img src={iconCheck} alt="" />}
           </span>
-          <p>Learn React</p>
+          <p>{todo.text}</p>
           <span className="cross">
             <img src={iconCross} alt="" />
           </span>
