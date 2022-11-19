@@ -1,6 +1,7 @@
 import { createContext, useState, useContext } from "react";
 
 import Controls from "./components/Controls";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Input from "./components/Input";
 import TodoList from "./components/TodoList";
@@ -39,9 +40,7 @@ function App() {
                 <Controls />
               </div>
 
-              <footer>
-                <p>Drag and drop to reorder list</p>
-              </footer>
+              <Footer />
             </div>
           </div>
         </div>
@@ -54,10 +53,8 @@ export default App;
 
 // TODO
 // 1. Responsive design
-// 7. Clear completed
 // 8. Filter
 // 9. Counter
-// 14. Conditional render controls and footer
 // 11. Drag and drop
 // 10. Firebase
 // 13. Align the input field text with the span

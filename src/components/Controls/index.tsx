@@ -7,9 +7,13 @@ import "./index.css";
 const Controls = () => {
   const { todos, clearCompletedTodos } = useContext(TodoContext);
 
+  if (todos.length === 0) {
+    return null;
+  }
+
   return (
     <div className="controls">
-      <p>2 items left</p>
+      <p>{todos.length} items left</p>
       <div className="primary--buttons">
         <button className="active">All</button>
         <button>Active</button>
