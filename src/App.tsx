@@ -1,21 +1,19 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState } from "react";
+
+import { TodoContextProvider } from "./context/TodoContext";
+
+import { ThemeType } from "./types";
 
 import Controls from "./components/Controls";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Input from "./components/Input";
 import TodoList from "./components/TodoList";
-import { TodoContextProvider, TodoContext } from "./context/TodoContext";
 
 export const ThemeContext = createContext<ThemeType>({
   theme: "",
   toggleTheme: () => null,
 });
-
-type ThemeType = {
-  theme: string;
-  toggleTheme: any;
-};
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -53,8 +51,8 @@ export default App;
 
 // TODO
 // 1. Responsive design
-// 11. Drag and drop
 // 16. Move types to their own file
 // 10. Firebase
 // 13. Align the input field text with the span
 // 15. Move theme context to its own file
+// 11. Drag and drop in filters

@@ -1,12 +1,5 @@
 import { createContext, useState } from "react";
-
-type Todo = {
-  id: number;
-  text: string;
-  completed: boolean;
-};
-
-type Filter = "all" | "completed" | "active";
+import { Todo, Filter } from "../types";
 
 // create context
 const TodoContext = createContext({
@@ -18,6 +11,7 @@ const TodoContext = createContext({
   deleteTodo: (id: number) => {},
   clearCompletedTodos: () => {},
   filterTodos: (filter: Filter) => {},
+  reorderTodos: (reorderedTodos: Todo[]) => {},
 });
 
 const TodoContextProvider = ({ children }: any) => {
@@ -71,6 +65,11 @@ const TodoContextProvider = ({ children }: any) => {
     }
   });
 
+  // reorder todos
+  const reorderTodos = (reorderedTodos: Todo[]) => {
+    setTodos(reorderedTodos);
+  };
+
   return (
     // the Provider gives access to the context to its children
     <TodoContext.Provider
@@ -83,6 +82,7 @@ const TodoContextProvider = ({ children }: any) => {
         deleteTodo,
         clearCompletedTodos,
         filterTodos,
+        reorderTodos,
       }}
     >
       {children}
