@@ -17,6 +17,10 @@
   color: var(--light-text-secondary);
 }
 
+.primary--buttons {
+  text-align: center;
+}
+
 .primary--buttons button,
 .secondary--buttons button {
   border: none;
