@@ -29,22 +29,36 @@ body {
   overflow-x: hidden;
 }
 
+.App {
+  min-height: 100vh;
+}
+
 .background {
   position: absolute;
   top: 0;
   left: 0;
 
   width: 100vw;
-  height: 300px;
-
-  z-index: -100;
+  height: 250px;
 }
 
-.bg-light {
+.App {
+  z-index: -1;
+}
+
+#light .App {
+  background-color: #f2f2f2;
+}
+
+#dark .App {
+  background-color: #171823;
+}
+
+#light .background {
   background-image: url("./assets/bg-desktop-light.jpg");
 }
 
-.bg-dark {
+#dark .background {
   background-image: url("./assets/bg-desktop-dark.jpg");
 }
 
@@ -56,12 +70,23 @@ body {
   border: 1px solid red;
 }
 
+.container * {
+  z-index: 2;
+}
+
 .list {
   border-radius: 5px;
-  box-shadow: 0px 22px 41px -3px rgba(156, 151, 151, 0.75);
+  box-shadow: 0px 22px 41px -3px rgba(161, 159, 159, 0.75);
 
   -webkit-box-shadow: 0px 22px 41px -3px rgba(156, 151, 151, 0.75);
   -moz-box-shadow: 0px 22px 41px -3px rgba(156, 151, 151, 0.75);
+}
+
+#dark .list {
+  box-shadow: 0px 22px 41px -3px rgba(5, 1, 12, 0.966);
+
+  -webkit-box-shadow: 0px 22px 41px -3px rgba(5, 1, 12, 0.966);
+  -moz-box-shadow: 0px 22px 41px -3px rgba(5, 1, 12, 0.966);
 }
 
 footer {

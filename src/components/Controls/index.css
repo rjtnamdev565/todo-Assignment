@@ -6,6 +6,11 @@
   padding: 15px 25px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  background-color: white;
+}
+
+#dark .controls {
+  background-color: #25273d;
 }
 
 .controls p {
@@ -22,8 +27,14 @@
   color: var(--light-text-secondary);
 }
 
-.primary--buttons button:hover {
+.primary--buttons button:hover,
+.secondary--buttons button:hover {
   color: var(--light-text-hover);
+}
+
+#dark .primary--buttons button:hover,
+#dark .secondary--buttons button:hover {
+  color: white;
 }
 
 .primary--buttons button {
@@ -33,5 +44,5 @@
 }
 
 .primary--buttons .active {
-  color: var(--light-text-active);
+  color: var(--light-text-active) !important;
 }

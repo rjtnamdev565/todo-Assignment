@@ -15,6 +15,12 @@
 
   font-size: 18px;
   color: var(--light-text-primary);
+  background-color: #f2f2f2;
+}
+
+#dark .input--wrapper input {
+  background-color: #25273d;
+  color: #c8cbe7;
 }
 
 .input--wrapper .input--checkmark {
@@ -29,4 +35,8 @@
   border: 1px solid var(--light-text-completed);
 
   cursor: pointer;
+}
+
+#dark .input--wrapper .input--checkmark {
+  border-color: #393a4b;
 }

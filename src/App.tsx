@@ -1,27 +1,49 @@
+import { createContext, useState } from "react";
+
 import Controls from "./components/Controls";
 import Header from "./components/Header";
 import Input from "./components/Input";
 import TodoList from "./components/TodoList";
 
+type ThemeType = {
+  theme: string;
+  toggleTheme: any;
+};
+
+export const ThemeContext = createContext<ThemeType>({
+  theme: "",
+  toggleTheme: () => null,
+});
+
 function App() {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+  };
+
   return (
-    <div className="App">
-      <div className="background bg-dark" />
-      <div className="container">
-        <Header />
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <div className="theme" id={theme}>
+        <div className="App">
+          <div className="background" />
+          <div className="container">
+            <Header />
 
-        <Input />
+            <Input />
 
-        <div className="list">
-          <TodoList />
-          <Controls />
+            <div className="list">
+              <TodoList />
+              <Controls />
+            </div>
+
+            <footer>
+              <p>Drag and drop to reorder list</p>
+            </footer>
+          </div>
         </div>
-
-        <footer>
-          <p>Drag and drop to reorder list</p>
-        </footer>
       </div>
-    </div>
+    </ThemeContext.Provider>
   );
 }
 
@@ -34,7 +56,7 @@ export default App;
 // 5. Delete task
 // 6. Complete task
 // 7. Clear completed
-// 8. Filter
+// 8. Filter>
 // 9. Counter
 // 10. Firebase
 // 11. Drag and drop

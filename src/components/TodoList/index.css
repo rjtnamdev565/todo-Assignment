@@ -11,8 +11,13 @@ li {
   height: 64px;
   border-bottom: 0.5px solid #e3e4f1;
 
-  background-color: #fff;
+  background-color: #f2f2f2;
   cursor: pointer;
+}
+
+#dark li {
+  background-color: #25273d;
+  border-bottom: 0.5px solid #393a4b;
 }
 
 li:first-child {
@@ -32,6 +37,10 @@ li p {
   /* text-decoration: line-through; */
 }
 
+#dark li p {
+  color: #c8cbe7;
+}
+
 li .checkmark {
   position: absolute;
   top: 50%;
@@ -41,12 +50,16 @@ li .checkmark {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  /* border: 0.5px solid var(--light-text-completed); */
+  border: 0.5px solid var(--light-text-completed);
 
   background-image: var(--gradient);
 
   text-align: center;
   cursor: pointer;
+}
+
+#dark li .checkmark {
+  border-color: #393a4b;
 }
 
 li .cross {
