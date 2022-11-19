@@ -49,7 +49,10 @@ function App() {
 export default App;
 
 // TODO
-// 10. Firebase
-// 13. Align the input field text with the span
-// 15. Move theme context to its own file
-// 11. Drag and drop in filters
+// - Deploy
+// - Firebase
+// - Readme
+
+// - Align the input field text with the span
+// - Move theme context to its own file
+// - Drag and drop in filters
