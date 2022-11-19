@@ -1,11 +1,11 @@
-import React from "react";
+import { useContext } from "react";
+
+import { TodoContext } from "../../context/TodoContext";
+
+import "./index.css";
 
 import iconCheck from "../../assets/icon-check.svg";
 import iconCross from "../../assets/icon-cross.svg";
-
-import "./index.css";
-import { useContext } from "react";
-import { TodoContext } from "../../context/TodoContext";
 
 type Todo = {
   id: number;
@@ -14,10 +14,14 @@ type Todo = {
 };
 
 const TodoList = () => {
-  const { todos, completeTodo } = useContext(TodoContext);
+  const { todos, completeTodo, deleteTodo } = useContext(TodoContext);
 
   const handleCompleteTodo = (id: number) => {
     completeTodo(id);
+  };
+
+  const handleDeleteTodo = (id: number) => {
+    deleteTodo(id);
   };
 
   return (
@@ -28,11 +32,15 @@ const TodoList = () => {
             className={`checkmark ${todo.completed && "completed"}`}
             onClick={() => handleCompleteTodo(todo.id)}
           >
-            {todo.completed && <img src={iconCheck} alt="" />}
+            {todo.completed && <img src={iconCheck} alt="checkmark icon" />}
           </span>
           <p>{todo.text}</p>
           <span className="cross">
-            <img src={iconCross} alt="" />
+            <img
+              src={iconCross}
+              alt="cross icon"
+              onClick={() => handleDeleteTodo(todo.id)}
+            />
           </span>
         </li>
       ))}

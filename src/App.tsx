@@ -54,14 +54,11 @@ export default App;
 
 // TODO
 // 1. Responsive design
-// 5. Delete task
-// 6. Complete task
 // 7. Clear completed
-// 8. Filter>
+// 8. Filter
 // 9. Counter
 // 14. Conditional render controls and footer
-// 10. Firebase
 // 11. Drag and drop
-// 12. Add task with enter key
+// 10. Firebase
 // 13. Align the input field text with the span
-// 15. Move context to its own file
+// 15. Move theme context to its own file
