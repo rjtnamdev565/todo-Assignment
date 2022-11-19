@@ -60,6 +60,10 @@ li .checkmark:hover {
   border-color: rgb(100, 189, 248);
 }
 
+#dark li .checkmark:hover {
+  border-color: #c8cbe7;
+}
+
 li .completed {
   background-image: var(--gradient);
   border: none;

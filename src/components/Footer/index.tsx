@@ -3,9 +3,9 @@ import { useContext } from "react";
 import { TodoContext } from "../../context/TodoContext";
 
 const Footer = () => {
-  const { todos } = useContext(TodoContext);
+  const { filteredTodos } = useContext(TodoContext);
 
-  if (todos.length === 0) {
+  if (filteredTodos.length === 0) {
     return null;
   }
 

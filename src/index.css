@@ -33,32 +33,18 @@ body {
   min-height: 100vh;
 }
 
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 100vw;
-  height: 250px;
-}
-
 .App {
   z-index: -1;
+  background-repeat: no-repeat;
 }
 
 #light .App {
   background-color: #f2f2f2;
+  background-image: url("./assets/bg-desktop-light.jpg");
 }
 
 #dark .App {
   background-color: #171823;
-}
-
-#light .background {
-  background-image: url("./assets/bg-desktop-light.jpg");
-}
-
-#dark .background {
   background-image: url("./assets/bg-desktop-dark.jpg");
 }
 
