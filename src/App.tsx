@@ -54,7 +54,6 @@ export default App;
 
 // TODO
 // 1. Responsive design
-// 4. Add task
 // 5. Delete task
 // 6. Complete task
 // 7. Clear completed
