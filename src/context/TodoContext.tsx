@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { Todo, Filter } from "../types";
 
 // create context
@@ -17,6 +17,27 @@ const TodoContext = createContext({
 const TodoContextProvider = ({ children }: any) => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [filter, setFilter] = useState<Filter>("all");
+
+  const saveTodos = (todos: Todo[]) => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  };
+
+  const readTodos = () => {
+    const savedTodos = localStorage.getItem("todos");
+    if (savedTodos) {
+      setTodos(JSON.parse(savedTodos));
+    }
+
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  };
+
+  useEffect(() => {
+    readTodos();
+  }, []);
+
+  useEffect(() => {
+    saveTodos(todos);
+  }, [todos]);
 
   const addTodo = (text: string) => {
     const newTodo = {

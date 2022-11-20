@@ -49,10 +49,7 @@ function App() {
 export default App;
 
 // TODO
-// - Deploy
 // - Firebase
-// - Readme
-
 // - Align the input field text with the span
 // - Move theme context to its own file
 // - Drag and drop in filters
