@@ -50,6 +50,5 @@ export default App;
 
 // TODO
 // - Firebase
-// - Align the input field text with the span
 // - Move theme context to its own file
 // - Drag and drop in filters
