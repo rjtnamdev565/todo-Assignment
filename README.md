@@ -36,9 +36,6 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/BauTancredi/todo-app)
-- Live Site URL: [Add live site URL here](https://bautancredi.github.io/todo-app/)
-
 ## My process
 
 ### Built with
@@ -52,6 +49,3 @@ Users should be able to:
 - Drag and drop in filters
 
 ## Author
-
-- Website - [Add your name here](https://www.bautista-tancredi.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/BauTancredi)
